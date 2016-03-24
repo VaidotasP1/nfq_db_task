@@ -1,0 +1,53 @@
+--
+-- Insert new author
+--
+
+INSERT INTO Authors SET name='Kevin Garret'
+
+--
+-- Insert new books with new author
+--
+
+INSERT INTO Books SET authorId=8, title='Books about my true story', year=2016
+
+--
+--Second insert new book
+--
+
+INSERT INTO Books SET authorId=8, title='Brand new car, 2th', year=2016
+--
+-- Update old books in new author
+--
+
+UPDATE Books SET authorId=4 WHERE bookId=2 LIMIT 1
+
+--
+-- count all authors books
+--
+
+SELECT COUNT(book.bookId) AS authorBookCount, author.name FROM Books AS book
+INNER JOIN Authors AS author ON author.authorId=book.authorId
+GROUP BY book.authorId
+
+--
+-- Delete inserted books
+--
+
+DELETE FROM Books WHERE authorId=8
+
+--
+--Delete books where doesnt have authors
+--
+
+DELETE FROM Books WHERE authorId IS NULL
+
+--
+-- Table structure for table `BooksGenres` - genres of the books
+--
+
+CREATE TABLE IF NOT EXISTS `BooksGenres` ( 
+`genreId` INTEGER(11) NOT NULL AUTO_INCREMENT, 
+`genre` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_lithuanian_ci NOT NULL, 
+`genreDescription` TEXT CHARACTER SET utf8 COLLATE utf8_lithuanian_ci NULL, 
+PRIMARY KEY (`genreId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci 
