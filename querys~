@@ -1,6 +1,7 @@
 --
 -- Insert new author
 --
+
 INSERT INTO Authors SET name='Kevin Garret'
 
 --
