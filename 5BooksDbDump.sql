@@ -26,7 +26,7 @@ CREATE TABLE `Authors` (
   `authorId` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_lithuanian_ci NOT NULL,
   PRIMARY KEY (`authorId`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `Authors` (
 
 LOCK TABLES `Authors` WRITE;
 /*!40000 ALTER TABLE `Authors` DISABLE KEYS */;
-INSERT INTO `Authors` VALUES (1,'Chris Smith'),(2,'Steven Levithan'),(3,' Jan Goyvaerts'),(4,'Ryan Benedetti'),(5,' Al Anderson'),(6,'Clay Breshears'),(7,'Kevlin Henney'),(8,'Kevin Garret'),(11,'Jonas Biliūnas');
+INSERT INTO `Authors` VALUES (1,'Chris Smith'),(2,'Steven Levithan'),(3,' Jan Goyvaerts'),(4,'Ryan Benedetti'),(5,' Al Anderson'),(6,'Clay Breshears'),(7,'Kevlin Henney'),(10,'Jonas Biliūnas');
 /*!40000 ALTER TABLE `Authors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +52,7 @@ CREATE TABLE `Books` (
   `year` year(4) DEFAULT NULL,
   `genreId` int(11) DEFAULT NULL,
   PRIMARY KEY (`bookId`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `Books` (
 
 LOCK TABLES `Books` WRITE;
 /*!40000 ALTER TABLE `Books` DISABLE KEYS */;
-INSERT INTO `Books` VALUES (1,'Programming F# 3.0, 2nd Edition',2012,2),(2,'Regular Expressions Cookbook, 2nd Edition',2012,3),(3,'Head First Networking',2009,3),(4,'The Art of Concurrency',2009,1),(5,'97 Things Every Programmer Should Know',2010,2),(6,'Liūdna pasaka',0000,4);
+INSERT INTO `Books` VALUES (1,'Programming F# 3.0, 2nd Edition',2012,4),(2,'Regular Expressions Cookbook, 2nd Edition',2012,1),(3,'Head First Networking',2009,2),(4,'The Art of Concurrency',2009,3),(5,'97 Things Every Programmer Should Know',2010,3),(11,'Liūdna pasaka',1980,4);
 /*!40000 ALTER TABLE `Books` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +111,7 @@ CREATE TABLE `BooksMap` (
 
 LOCK TABLES `BooksMap` WRITE;
 /*!40000 ALTER TABLE `BooksMap` DISABLE KEYS */;
-INSERT INTO `BooksMap` VALUES (1,1,1),(2,2,4),(3,3,4),(4,4,6),(5,5,7),(6,1,7),(7,1,5),(8,6,11);
+INSERT INTO `BooksMap` VALUES (1,1,1),(2,2,4),(3,3,4),(4,4,6),(5,5,7),(6,1,7),(7,1,5),(8,11,10);
 /*!40000 ALTER TABLE `BooksMap` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -124,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 23:38:31
+-- Dump completed on 2016-03-25 22:09:47
